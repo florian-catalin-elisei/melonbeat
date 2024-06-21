@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api/getTracksRelated",
+  // baseURL: "http://localhost:5000/api/getTracksRelated",
+  baseURL: "https://melonbeat-backend.vercel.app/api/getTracksRelated",
   headers: {
     "X-RapidAPI-Key": import.meta.env.VITE_SHAZAM_CORE_API_KEY,
     "X-RapidAPI-Host": "shazam-core.p.rapidapi.com",
