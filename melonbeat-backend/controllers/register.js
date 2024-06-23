@@ -17,8 +17,6 @@ export const register = async (req, res) => {
 
     delete userToReturn.password;
 
-    res.set("Access-Control-Allow-Origin", "https://melonbeat-frontend.vercel.app");
-
     return res.status(200).send(userToReturn);
   } catch (error) {
     return res.status(500).json({ error: error.message });
