@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     origin: "https://melonbeat-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
