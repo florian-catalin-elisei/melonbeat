@@ -12,6 +12,7 @@ export const register = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 10);
     const newUserData = { email, firstName, lastName, password: hashPassword, username };
     const newUser = await User.create(newUserData);
+    res.header("Access-Control-Allow-Origin", "https://melonbeat-frontend.vercel.app");
     const token = await getToken(newUser);
     const userToReturn = { ...newUser.toJSON(), token };
 
