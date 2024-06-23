@@ -15,12 +15,14 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     origin: "https://melonbeat-frontend.vercel.app",
+    credentials: true,
   })
 );
 app.options(
   "*",
   cors({
     origin: "https://melonbeat-frontend.vercel.app",
+    credentials: true,
   })
 );
 app.use(express.json());
