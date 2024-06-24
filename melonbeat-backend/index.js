@@ -16,10 +16,12 @@ app.use(
   cors({
     origin: "https://melonbeat-frontend.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "Access-Control-Allow-Origin"],
     credentials: true,
   })
 );
+
+app.options("*", cors());
 
 app.use(express.json());
 
