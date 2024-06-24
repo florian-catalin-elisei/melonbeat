@@ -21,16 +21,6 @@ app.use(
   })
 );
 
-app.options(
-  "*",
-  cors({
-    origin: "https://melonbeat-frontend.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
-
 app.use(express.json());
 
 app.use("/api/getTrackDetails", async (req, res) => {
