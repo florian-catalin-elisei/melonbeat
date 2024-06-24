@@ -93,7 +93,6 @@ import axios from "axios";
 export const makeUnauthenticatedPOSTRequest = async (route, body) => {
   try {
     const response = await axios.post(`https://melonbeat-backend.vercel.app/${route}`, body, {
-      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
       },
@@ -115,7 +114,6 @@ export const makeAuthenticatedPOSTRequest = async (route, body) => {
   try {
     const token = getToken();
     const response = await axios.post(`https://melonbeat-backend.vercel.app/${route}`, body, {
-      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -133,7 +131,6 @@ export const makeAuthenticatedGETRequest = async (route) => {
   try {
     const token = getToken();
     const response = await axios.get(`https://melonbeat-backend.vercel.app/${route}`, {
-      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -151,7 +148,6 @@ export const makeAuthenticatedDELETERequest = async (route) => {
   try {
     const token = getToken();
     const response = await axios.delete(`https://melonbeat-backend.vercel.app/${route}`, {
-      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -169,7 +165,6 @@ export const makeAuthenticatedPUTRequest = async (route, body) => {
   try {
     const token = getToken();
     const response = await axios.put(`https://melonbeat-backend.vercel.app/${route}`, body, {
-      withCredentials: true,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

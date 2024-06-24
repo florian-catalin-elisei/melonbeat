@@ -4,10 +4,6 @@ import bcrypt from "bcrypt";
 
 export const login = async (req, res) => {
   try {
-    res.header("Access-Control-Allow-Origin", "https://melonbeat-frontend.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
     const { email, password } = req.body;
     const user = await User.findOne({ email });
 
